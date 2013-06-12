@@ -1,0 +1,20 @@
+<project name="build-test">
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+    <target name="compile" depends="clean">
+        <mkdir dir="build/classes"/>
+        <javac scrdir="src" destdir="build/classes"/>
+    </target>
+    <target name="jar" depends="compile">
+        <mkdir dir="build/dir"/>
+        <jar destfile="build/jar/Main.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="wsoula.Main"/>
+            </manifest>
+        </jar>
+    </target>
+    <target name="run" depends="compile, jar">
+        <java jar="build/jar/Main.jar" fork="true"/>
+    </target>
+</project>
