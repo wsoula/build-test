@@ -4,7 +4,7 @@
     </target>
     <target name="compile" depends="clean">
         <mkdir dir="build/classes"/>
-        <javac scrdir="src" destdir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
     </target>
     <target name="jar" depends="compile">
         <mkdir dir="build/dir"/>
